@@ -5,6 +5,8 @@ It is based on a [Rasberry Pi](https://www.raspberrypi.org/) connected with a [W
 
 The code is written (poorly) in C++, because writing to the eInk display is timing-sensitive, there were good drivers for C++, and it was a good excuse to dust off my "lower level" programming skills after a decade of primarily programming in python and javascript.
 
+Full writeup at http://brettcvz.com/projects/6-upnext
+
 ## Building
 Requires the following libraries to build:
 - [Pango](https://pango.gnome.org/) + [Cairo](https://www.cairographics.org/)
