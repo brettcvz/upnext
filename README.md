@@ -5,6 +5,8 @@ It is based on a [Rasberry Pi](https://www.raspberrypi.org/) connected with a [W
 
 The code is written (poorly) in C++, because writing to the eInk display is timing-sensitive, there were good drivers for C++, and it was a good excuse to dust off my "lower level" programming skills after a decade of primarily programming in python and javascript.
 
+Full writeup at http://brettcvz.com/projects/6-upnext
+
 ## Building - Abbreviated version
 Requires the following libraries to build:
 - [Pango](https://pango.gnome.org/) + [Cairo](https://www.cairographics.org/)
@@ -39,14 +41,18 @@ Setup ssh:
  - `sudo systemctl restart ssh`
  - Test everything is configured by trying `ssh test@<hostname>.local` - should be blocked, no password prompt
 
-`sudo timedatectl set-ntp True` - to fix clock skew
-`sudo apt-get update`
-`sudo apt-get upgrade`
-`sudo apt-get install vim git screen`
+```
+sudo timedatectl set-ntp True # to fix clock skew
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim git screen
+```
 
 ### Installing dependencies
 #### Pangocairo
-`sudo apt-get install libcairo2-dev libpango1.0-dev libpangocairo-1.0-0`
+```
+sudo apt-get install libcairo2-dev libpango1.0-dev libpangocairo-1.0-0
+```
 
 #### Restclient-cpp
 ```
@@ -72,8 +78,10 @@ sudo make install
 #### Fonts
 [Install](https://wiki.debian.org/Fonts#Adding_fonts) the [Proxima Nova](https://fonts.adobe.com/fonts/proxima-nova) font, or [substitute your favorite](https://wiki.archlinux.org/index.php/fonts#List_all_installed_fonts). Note that figuring out which fonts look good on the screen requires some testing.
 
-Put the fonts in `/usr/local/share/fonts`
-`fc-cache -fv`
+Put the fonts in `/usr/local/share/fonts`, then:
+```
+fc-cache -fv
+```
 
 ### Building upNext
 ```
