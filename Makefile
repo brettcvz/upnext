@@ -3,7 +3,8 @@ CC_FLAGS=-std=c++11
 PANGOCAIRO_LIBS=`pkg-config --cflags --libs pangocairo`
 DLIBS=-lbcm2835
 HTTP_LIBS=-lrestclient-cpp
-LIBS=$(PANGOCAIRO_LIBS) $(DLIBS) $(HTTP_LIBS)
+CURL_LIBS=-lcurl
+LIBS=$(PANGOCAIRO_LIBS) $(DLIBS) $(HTTP_LIBS) $(CURL_LIBS)
 SOURCES:=main.cpp gcal.cpp screen.cpp epd4in2b.cpp epdif.cpp
 BUILD_DIR:=bld
 CODE_DIR:=code
